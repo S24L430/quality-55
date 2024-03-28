@@ -6,14 +6,14 @@ data:
   trafficFilters:
     rules:
       # Block access to a given path
-      # - name: block-path
-      #   when:
-      #     allOf:
-      #       - reqProperty: tier
-      #         matches: "author|publish"
-      #       - reqProperty: path
-      #         equals: '/block/me'
-      #   action: block
+      - name: block-path
+        when:
+          allOf:
+             - reqProperty: tier
+               matches: "author|publish"
+             - reqProperty: path
+               equals: '/block/me'
+         action: block
       # Block access to OFAC countries
       - name: block-ofac-countries
         when:
